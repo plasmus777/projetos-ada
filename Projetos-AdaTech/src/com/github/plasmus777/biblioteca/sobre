@@ -1,0 +1,77 @@
+https://pad.riseup.net/p/zdGg3X4BZcn7k2O_i5d7
+
+---
+title: Biblioteca
+---
+classDiagram
+    class BibliotecaServiceImpl
+    <<Abstract>> BibliotecaServiceImpl
+    BibliotecaServiceImpl : - List<ItemCatalogo> itens
+
+    class BibliotecaService
+    <<Interface>> BibliotecaService
+    BibliotecaService: + reservar()
+    BibliotecaService: + consultar()
+
+    class BibliotecaServiceFisica
+    <<Interface>> BibliotecaServiceFisica
+    BibliotecaServiceFisica: + emprestar()
+    BibliotecaServiceFisica: + devolver()
+    BibliotecaServiceFisica: + cadastrar()
+    BibliotecaService <|-- BibliotecaServiceFisica
+
+    class BibliotecaServiceVirtual
+    <<Interface>> BibliotecaServiceVirtual
+    BibliotecaService <|-- BibliotecaServiceVirtual
+
+    class BibliotecaServiceFisicaImpl
+    BibliotecaServiceFisicaImpl: + reservar()
+    BibliotecaServiceFisicaImpl: + emprestar()
+    BibliotecaServiceFisicaImpl: + devolver()
+    BibliotecaServiceFisicaImpl: + consultar()
+    BibliotecaServiceFisica <|-- BibliotecaServiceFisicaImpl
+    BibliotecaServiceImpl <|-- BibliotecaServiceFisicaImpl
+
+    class BibliotecaServiceVirtualImpl
+    BibliotecaServiceVirtualImpl: + reservar()
+    BibliotecaServiceVirtualImpl: + consultar()
+    BibliotecaServiceVirtual <|-- BibliotecaServiceVirtualImpl
+    BibliotecaServiceImpl <|-- BibliotecaServiceVirtualImpl
+
+    class ItemCatalogo
+    <<Abstract>> ItemCatalogo
+    ItemCatalogo : - String titulo
+    ItemCatalogo : - String autor
+    ItemCatalogo : - LocalDate data
+
+    class Livro
+    Livro : - String isbn
+    Livro : - int numeroPaginas
+    Livro : - String editora
+
+    class Revista
+    Revista : - int numeroEdicao
+    Revista : - String mesPublicacao
+    Revista : - String categoria
+
+    class Manuscrito
+    Manuscrito: - String localOrigem
+    Manuscrito: - String estadoConservacao
+    Manuscrito: - boolean digitalizado
+
+    ItemCatalogo <|-- Livro
+    ItemCatalogo <|-- Revista
+    ItemCatalogo <|-- Manuscrito
+
+
+Link Mermaid
+https://www.mermaidchart.com/play?utm_source=mermaid_live_editor&utm_medium=banner_ad&utm_campaign=teams#pako:eNqdlM1qwzAMx1_F9LQx8gKlFLZug0LHxgo79aI6WhA49rCVHPbx7nPSdHHSxjXrqZZ-sv6RZH3NpMlxNp9lWbbTTKxwLu5or8gwStjp1i4VOHdPUFgod1r4X2sJwC3amiSuyw91ABaL271jC5KXyxh31iXmIhMbcrxYM5YrYFCmMEtBjNrtdFTCMf1aM9p3kHgu_0TuubgRFp0_gL26jkDSaFcp7qmopEdy1NQyQViITjib_Fh-eJ0cUdmzOdZG1ZiCSsihado0KxbfWRaXHS3FG1muQCXVYsCmKhkEJXQlMok9kDQXQzy1Q0c-sUtH_GQAJ_hovy69wrTYlH5HMgVEUplH_OVCdAHxeflfKQbBYR3CtXVmH566Q0u7_bZsSRfCb-RKXWCgYmMnkI2RoO6BUeTePBS5odqarn2H_8Gl5PZ67CLNQlclWvMCBWlwE7GYk1c0yvaKtV_o3Y7oDqNbH3I_WOaU6K4t0b1UvgMSYpT0H1sYS6P0T6ArJ60XdrD25yBWNdV6tlRgGaGaZ52blR-8ZlL_tAzZvTEKQYucCvL9oE8fEr6XQafa6WrLOOUcVO_U3eee_fwCtCiyZA
+
+Atividade Parte 2:
+1. criar duas interfaces novas: BibliotecaServiceVirtual e BibliotecaServiceFisica
+2. fazer com que estas interfaces estendam a interface pai BibliotecaService
+3. renomear a classe BibliotecaServiceImpl para BibliotecaServiceFisicaImpl
+4. criar a classe BibliotecaServiceVirtualImpl que estende a interface BibliotecaServiceVirtual
+5. criar a classe abstrata BibliotecaServiceImpl e fazer as outras BibliotecaServiceFisicaImpl e BibliotecaServiceVirtualImpl estenderem ela
+6. Incluir atributos descritos nas classes de ItemCatalogo e relacionados
+7. Implementar lógica que cadastre
