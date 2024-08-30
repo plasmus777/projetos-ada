@@ -22,7 +22,32 @@ public abstract class BibliotecaServiceImpl implements BibliotecaService {
 
     @Override
     public ItemCatalogo reservar(ItemCatalogo itemCatalogo) {
-        System.out.println("Um livro foi reservado.");
-        return null;
+        ArrayList<ItemCatalogo> itens = bibliotecaRepository.consultar(itemCatalogo.getTitulo());
+
+        if(itens == null || itens.isEmpty()) {
+            System.out.println("Não foi possível encontrar o item especificado.");
+            return null;
+        }
+
+        boolean reservado = false;
+        ItemCatalogo item = null;
+        for(ItemCatalogo i: itens){
+            if(i.equals(itemCatalogo)){
+                if(!i.isReservado()){
+                    i.setReservado(true);
+                    item = i;
+                    reservado = true;
+                    break;
+                }
+            }
+        }
+
+        if(!reservado){
+            System.out.println("Não foi possível reservar o item especificado.");
+        }else{
+            System.out.println("Um item foi reservado com sucesso.");
+        }
+
+        return item;
     }
 }

@@ -7,12 +7,12 @@ public class BibliotecaServiceFisicaImpl extends BibliotecaServiceImpl implement
 
     @Override
     public void emprestar(ItemCatalogo itemCatalogo){
-        System.out.println("Um livro foi emprestado.");
+        System.out.println("Um item foi emprestado.");
     }
 
     @Override
     public void devolver(ItemCatalogo itemCatalogo){
-        System.out.println("Um livro foi devolvido.");
+        System.out.println("Um item foi devolvido.");
     }
 
     @Override

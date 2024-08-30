@@ -38,14 +38,15 @@ public class BibliotecaRepositoryImpl implements BibliotecaRepository{
 
     @Override
     public ItemCatalogo atualizar(ItemCatalogo itemCatalogo) {
-        ArrayList<ItemCatalogo> lista = consultar(itemCatalogo.getTitulo());
 
-        for(ItemCatalogo i : lista){
-            if(itemCatalogo.equals(i)){
-
-            }
+        if(!itemCatalogo.isReservado()){
+            itemCatalogo.setReservado(true);
+            System.out.println("O livro " + itemCatalogo.getTitulo() + " está indisponível para reserva.");
+        } else {
+            itemCatalogo.setReservado(false);
+            System.out.println("O livro " + itemCatalogo.getTitulo() + " está disponível para reserva.");
         }
 
-            return null;
+        return itemCatalogo;
     }
 }

@@ -9,12 +9,21 @@ public abstract class ItemCatalogo {
     private String titulo;
     private String autor;
     private LocalDate data;
+    private boolean reservado;
 
     public ItemCatalogo(String titulo, String autor, LocalDate data){
         this.id = ID_ATUAL++;
         setTitulo(titulo);
         setAutor(autor);
         setData(data);
+    }
+
+    public boolean isReservado(){
+        return reservado;
+    }
+
+    public void setReservado(boolean reservado){
+        this.reservado = reservado;
     }
 
     public int getId(){
