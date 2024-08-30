@@ -1,34 +1,27 @@
-package com.github.plasmus777.biblioteca;
+package com.github.plasmus777.biblioteca.service;
 
 import com.github.plasmus777.biblioteca.interfaces.BibliotecaServiceFisica;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.github.plasmus777.biblioteca.models.ItemCatalogo;
 
 public class BibliotecaServiceFisicaImpl extends BibliotecaServiceImpl implements BibliotecaServiceFisica {
 
     @Override
-    public void reservar() {
+    public void reservar(ItemCatalogo itemCatalogo) {
         System.out.println("Um livro foi reservado.");
     }
 
     @Override
-    public void emprestar(){
+    public void emprestar(ItemCatalogo itemCatalogo){
         System.out.println("Um livro foi emprestado.");
     }
 
     @Override
-    public void devolver(){
+    public void devolver(ItemCatalogo itemCatalogo){
         System.out.println("Um livro foi devolvido.");
     }
 
     @Override
-    public void cadastrar() {
+    public void cadastrar(ItemCatalogo itemCatalogo) {
 
-    }
-
-    @Override
-    public void consultar(){
-        System.out.println("Um livro foi consultado.");
     }
 }

@@ -1,9 +1,13 @@
 package com.github.plasmus777.biblioteca.interfaces;
 
+import com.github.plasmus777.biblioteca.models.ItemCatalogo;
+
+import java.util.ArrayList;
+
 public interface BibliotecaService {
 
-    void reservar();
+    void reservar(ItemCatalogo itemCatalogo);
 
-    void consultar();
+    ArrayList<ItemCatalogo> consultar(String nomeItem);
 
 }

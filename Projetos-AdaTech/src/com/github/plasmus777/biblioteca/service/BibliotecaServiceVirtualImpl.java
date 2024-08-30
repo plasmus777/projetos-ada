@@ -1,19 +1,12 @@
-package com.github.plasmus777.biblioteca;
+package com.github.plasmus777.biblioteca.service;
 
 import com.github.plasmus777.biblioteca.interfaces.BibliotecaServiceVirtual;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.github.plasmus777.biblioteca.models.ItemCatalogo;
 
 public class BibliotecaServiceVirtualImpl extends BibliotecaServiceImpl implements BibliotecaServiceVirtual {
 
     @Override
-    public void reservar() {
+    public void reservar(ItemCatalogo itemCatalogo) {
         System.out.println("Um livro foi reservado.");
-    }
-
-    @Override
-    public void consultar() {
-        System.out.println("Um livro foi consultado.");
     }
 }

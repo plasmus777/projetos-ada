@@ -1,10 +1,12 @@
 package com.github.plasmus777.biblioteca.interfaces;
 
+import com.github.plasmus777.biblioteca.models.ItemCatalogo;
+
 public interface BibliotecaServiceFisica extends BibliotecaService{
 
-    void emprestar();
+    void emprestar(ItemCatalogo itemCatalogo);
 
-    void devolver();
+    void devolver(ItemCatalogo itemCatalogo);
 
-    void cadastrar();
+    void cadastrar(ItemCatalogo itemCatalogo);
 }
