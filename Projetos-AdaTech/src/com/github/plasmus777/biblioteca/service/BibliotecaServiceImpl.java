@@ -11,6 +11,10 @@ public abstract class BibliotecaServiceImpl implements BibliotecaService {
 
     BibliotecaRepository bibliotecaRepository;
 
+    public BibliotecaServiceImpl(BibliotecaRepository bibliotecaRepository){
+        setBibliotecaRepository(bibliotecaRepository);
+    }
+
     public void setBibliotecaRepository(BibliotecaRepository bibliotecaRepository){
         this.bibliotecaRepository = bibliotecaRepository;
     }
