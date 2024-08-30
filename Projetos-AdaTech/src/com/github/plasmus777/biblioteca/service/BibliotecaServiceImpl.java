@@ -19,4 +19,10 @@ public abstract class BibliotecaServiceImpl implements BibliotecaService {
     public ArrayList<ItemCatalogo> consultar(String nomeItem){
         return bibliotecaRepository.consultar(nomeItem);
     }
+
+    @Override
+    public ItemCatalogo reservar(ItemCatalogo itemCatalogo) {
+        System.out.println("Um livro foi reservado.");
+        return null;
+    }
 }

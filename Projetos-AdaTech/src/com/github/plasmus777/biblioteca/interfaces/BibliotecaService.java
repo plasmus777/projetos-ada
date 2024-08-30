@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public interface BibliotecaService {
 
-    void reservar(ItemCatalogo itemCatalogo);
+    ItemCatalogo reservar(ItemCatalogo itemCatalogo);
 
     ArrayList<ItemCatalogo> consultar(String nomeItem);
 

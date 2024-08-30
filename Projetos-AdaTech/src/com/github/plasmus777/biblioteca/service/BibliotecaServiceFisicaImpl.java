@@ -6,11 +6,6 @@ import com.github.plasmus777.biblioteca.models.ItemCatalogo;
 public class BibliotecaServiceFisicaImpl extends BibliotecaServiceImpl implements BibliotecaServiceFisica {
 
     @Override
-    public void reservar(ItemCatalogo itemCatalogo) {
-        System.out.println("Um livro foi reservado.");
-    }
-
-    @Override
     public void emprestar(ItemCatalogo itemCatalogo){
         System.out.println("Um livro foi emprestado.");
     }
