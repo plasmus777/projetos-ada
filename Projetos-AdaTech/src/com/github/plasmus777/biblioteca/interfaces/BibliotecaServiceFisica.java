@@ -4,7 +4,7 @@ import com.github.plasmus777.biblioteca.models.ItemCatalogo;
 
 public interface BibliotecaServiceFisica extends BibliotecaService{
 
-    void emprestar(ItemCatalogo itemCatalogo);
+    void emprestar(ItemCatalogo itemCatalogo, String nomeLocatario);
 
     void devolver(ItemCatalogo itemCatalogo);
 

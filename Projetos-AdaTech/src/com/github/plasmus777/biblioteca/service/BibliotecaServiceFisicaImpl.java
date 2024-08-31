@@ -11,17 +11,28 @@ public class BibliotecaServiceFisicaImpl extends BibliotecaServiceImpl implement
     }
 
     @Override
-    public void emprestar(ItemCatalogo itemCatalogo){
-        System.out.println("Um item foi emprestado.");
+    public void emprestar(ItemCatalogo itemCatalogo, String nomeLocatario){
+        if(itemCatalogo.isReservado()){
+            System.out.println("O item " + itemCatalogo.getTitulo() + " já foi reservado.");
+        } else{
+            itemCatalogo.setReservado(true);
+            itemCatalogo.setNomeLocatario(nomeLocatario);
+            System.out.println("O item " + itemCatalogo.getTitulo() + " foi emprestado com sucesso.");
+        }
     }
 
     @Override
     public void devolver(ItemCatalogo itemCatalogo){
-        System.out.println("Um item foi devolvido.");
+        if(itemCatalogo.isReservado()){
+            itemCatalogo.setReservado(false);
+            System.out.println("O item " + itemCatalogo.getTitulo() + " foi devolvido ao catálogo.");
+        } else {
+            System.out.println("O item " + itemCatalogo.getTitulo() + " não foi emprestado e, portanto, não pode ser devolvido.");
+        }
     }
 
     @Override
     public void cadastrar(ItemCatalogo itemCatalogo) {
-
+        super.bibliotecaRepository.cadastrar(itemCatalogo);
     }
 }
