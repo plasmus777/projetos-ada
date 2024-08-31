@@ -25,6 +25,7 @@ public class BibliotecaServiceFisicaImpl extends BibliotecaServiceImpl implement
     public void devolver(ItemCatalogo itemCatalogo){
         if(itemCatalogo.isReservado()){
             itemCatalogo.setReservado(false);
+            itemCatalogo.setNomeLocatario(null);
             System.out.println("O item " + itemCatalogo.getTitulo() + " foi devolvido ao catálogo.");
         } else {
             System.out.println("O item " + itemCatalogo.getTitulo() + " não foi emprestado e, portanto, não pode ser devolvido.");
