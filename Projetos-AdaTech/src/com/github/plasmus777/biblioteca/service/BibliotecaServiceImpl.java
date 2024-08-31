@@ -49,7 +49,7 @@ public abstract class BibliotecaServiceImpl implements BibliotecaService {
         if(!reservado){
             System.out.println("Não foi possível reservar o item especificado.");
         }else{
-            System.out.println("Um item foi reservado com sucesso.");
+            System.out.println("O item \"" + item.getTitulo() + "\" foi reservado com sucesso.");
         }
 
         return item;

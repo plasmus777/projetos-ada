@@ -74,4 +74,9 @@ public abstract class ItemCatalogo {
                 this.getAutor().equals(cat.getAutor()) &&
                 this.getData().equals(cat.getData()));
     }
+
+    @Override
+    public String toString() {
+        return "-------------------------\nTítulo: " + getTitulo() + "\nAutor: " + getAutor() + "\nAno: " + getData() + "\n-------------------------";
+    }
 }

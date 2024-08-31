@@ -16,6 +16,7 @@ public class BibliotecaRepositoryImpl implements BibliotecaRepository{
         System.out.println("Título: " + item.getTitulo());
         System.out.println("Autor: " + item.getAutor());
         System.out.println("Data: " + item.getData());
+        System.out.println("-------------------------");
         return item;
     }
 
@@ -28,7 +29,7 @@ public class BibliotecaRepositoryImpl implements BibliotecaRepository{
         }
 
         for(ItemCatalogo item : itens){
-            if(item.getTitulo().equals(nomeItem)){
+            if(item.getTitulo().toLowerCase().contains(nomeItem.toLowerCase())){
                 busca.add(item);
             }
         }
