@@ -37,8 +37,7 @@ public abstract class BibliotecaServiceImpl implements BibliotecaService {
         ItemCatalogo item = null;
         for(ItemCatalogo i: itens){
             if(i.equals(itemCatalogo)){
-                if(!i.isReservado()){
-                    i.setReservado(true);
+                if(!i.isReservado()){                    i.setReservado(true);
                     item = i;
                     reservado = true;
                     break;
